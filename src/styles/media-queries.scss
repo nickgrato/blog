@@ -1,0 +1,150 @@
+
+/*-------------------------
+MEDIA QUERIES 
+-------------------------*/
+
+@mixin mobile-to-tablet {
+  @media (min-width: 600px) and (max-width: 1000px) { @content; }
+}
+
+@mixin mobile-down {
+  @media (max-width: $breakpoint-mobile) { @content; }
+}
+
+@mixin large-mobile-up {
+  @media (min-width: $breakpoint-mobile) { @content; }
+}
+
+@mixin mobile-only {
+  @media (max-width: $breakpoint-tablet - 1) { @content; }
+}
+
+@mixin mobile-tablet {
+  @media (max-width: $breakpoint-desktop - 1) { @content; }
+}
+
+@mixin tablet-up {
+  @media (min-width: $breakpoint-tablet) { @content; }
+}
+
+@mixin tablet-down {
+  @media (max-width: $breakpoint-tablet) { @content; }
+}
+
+@mixin tablet-large-up {
+  @media (min-width: $breakpoint-tablet-large) { @content; }
+}
+
+@mixin tablet-large-down {
+  @media (max-width: $breakpoint-tablet-large) { @content; }
+}
+
+@mixin tablet-only {
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop - 1) { @content; }
+}
+
+@mixin desktop-up {
+  @media (min-width: $breakpoint-desktop) { @content; }
+}
+
+@mixin desktop-only {
+  @media (min-width: $breakpoint-desktop) and (max-width: $breakpoint-hd - 1) { @content; }
+}
+
+@mixin desktop-down {
+  @media ( max-width: $breakpoint-desktop ) { @content; }
+}
+
+@mixin desktop-large-up {
+  @media (min-width: $breakpoint-desktop-large) { @content; }
+}
+
+@mixin desktop-large-only {
+  @media (min-width: $breakpoint-desktop-large) and (max-width: $breakpoint-hd - 1) { @content; }
+}
+
+@mixin desktop-large-down {
+  @media ( max-width: $breakpoint-desktop-large ) { @content; }
+}
+
+@mixin hd-up {
+  @media (min-width: $breakpoint-hd) { @content; }
+}
+
+@mixin max-width-up {
+  @media (min-width: $container-max-width) { @content; }
+}
+
+/**
+  * Browser/Device Targeting
+  * ========================
+  * These are @supports/@media "hacks" used to specifically target IE11/Safari/Firefox/Chrome
+  * There are also @media queries in here for different phone sizes/types.
+**/
+
+// IE11
+@mixin ie {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { @content; }
+}
+
+// Safari (all 10.1+)
+@mixin safari {
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) { @content; }
+  }
+}
+
+// Safari (iOS ONLY)
+@mixin safari-ios {
+  @supports (-webkit-touch-callout: none) { @content; }
+}
+
+// Firefox (16+)
+@mixin firefox {
+  @supports (-moz-appearance:meterbar) { @content; }
+}
+
+// Chrome (29+)
+@mixin chrome {
+  @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) { @content; }
+}
+
+/**
+  * iPhones
+  * =======
+**/
+
+// XR
+@mixin iphone-xr {
+  @media only screen and (device-width : 414px) and (device-height : 896px) { @content; }
+}
+
+// XS
+@mixin iphone-xs {
+  @media only screen and (device-width : 375px) and (device-height : 812px) { @content; }
+}
+
+// XS Max
+@mixin iphone-xs-max {
+  @media only screen and (device-width : 414px) and (device-height : 896px) { @content; }
+}
+
+// X
+@mixin iphone-x {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) { @content; }
+}
+
+// 6+, 7+, & 8+
+@mixin iphone-6-8-plus {
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) { @content; }
+}
+
+// 6, 6s, 7 & 8
+@mixin iphone-6-8 {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) { @content; }
+}
+
+// 5, 5s, 5c, se
+@mixin iphone-5 {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 374px) { @content; }
+}

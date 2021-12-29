@@ -1,0 +1,524 @@
+
+/**
+ * Forces an element to self-clear its children
+ *
+ * Usage:
+ * .selector {
+ *   @include clearfix;
+ * }
+ */
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  // stylelint-disable-next-line
+  *zoom: 1;
+}
+
+/**
+ * Hide element but make it accessible to screen readers
+ *
+ * Usage:
+ * .selector {
+ *   @include visually-hidden;
+ * }
+ */
+@mixin visually-hidden() {
+  // stylelint-disable-next-line
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+/**
+ * Reverse the properties applied by @mixin visually-hidden
+ *
+ * Accepts:
+ * - $position: {String} Positioning method for element
+ *
+ * Usage:
+ * .selector {
+ *   @include visually-shown(relative);
+ * }
+ */
+@mixin visually-shown($position: inherit) {
+  // stylelint-disable-next-line
+  position: $position !important;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+}
+
+
+
+/**
+ * Hide element but make it accessible to screen readers
+ *
+ * Usage:
+ * .selector {
+ *   @include visually-hidden;
+ * }
+ */
+@mixin visually-hidden() {
+  // stylelint-disable-next-line
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+ 
+@mixin font-size($size: 16) {
+  -font-size- : $size;
+  font-size: rem($size);
+}
+
+@mixin primary-font($weight: 300 ) {
+  font-family: $primary-font,'sans-serif';
+  font-weight: $weight;
+}
+
+@mixin primary-font($weight: 400 ) {
+  font-family: $primary-font, 'sans-serif';
+  font-weight: $weight;
+}
+
+@mixin box-sizing($value: border-box) {
+  box-sizing: $value;
+  -moz-box-sizing: $value;
+  -webkit-box-sizing: $value;
+}
+
+@mixin h1 {
+  @include font-size(25);
+  @include primary-font(500);
+  letter-spacing: 0;
+  line-height: 38px;
+  
+  @include tablet-up {
+    @include font-size(40);
+    line-height: 52px;
+  }
+}
+
+@mixin h2 {
+  @include font-size(18);
+  @include primary-font(500);
+  line-height: 27px;
+  letter-spacing: 0;
+  @include tablet-up {
+    @include font-size(25);
+    line-height: 38px;
+  }
+}
+
+@mixin h3 {
+  @include font-size(18);
+  @include primary-font(600);
+  line-height: 27px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+@mixin h3-sub {
+  @include font-size(12);
+  @include primary-font(700);
+  letter-spacing: 0.8px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  @include tablet-up {
+    @include font-size(16);
+    line-height: 22px;
+    letter-spacing: 1.1;
+  }
+}
+
+
+@mixin h4 {
+  @include font-size(14);
+  @include primary-font(700);
+  line-height: 25px;
+  letter-spacing: 0;
+  @include tablet-up {
+    @include font-size(18);
+    letter-spacing: 0;
+    line-height: 21px;
+  }
+}
+
+@mixin body-lg($weight: 700) {
+  @include font-size(14);
+  @include primary-font($weight);
+  line-height: 21px;
+  letter-spacing: 0;
+
+  @include tablet-up {
+    @include font-size(16);
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+}
+
+@mixin body-md {
+  @include primary-font(300);
+  @include font-size(12);
+  letter-spacing: 0;
+  line-height: 24px;
+
+  @include tablet-up {
+    @include font-size(14);
+  }
+}
+
+@mixin body-dt {
+  @include font-size(12);
+  @include primary-font(600);
+  letter-spacing: 0;
+  line-height: 25px;
+  @include tablet-up {
+    @include font-size(14);
+    line-height: 20px;
+  }
+}
+
+@mixin body-sm {
+  @include font-size(12);
+  @include primary-font(400);
+  letter-spacing: 0;
+  line-height: 25px;  
+}
+
+
+@mixin body-xs {
+  @include font-size(10);
+  @include primary-font(300);
+  line-height: 13px;
+}
+
+
+@mixin linkBase() {
+  transition: all .15s ease;
+  text-decoration: none;
+  position: relative;
+  outline: transparent;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@mixin linkHover($color: $b-dark-blue, $weight: 2){
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: #{$weight}px;
+    background: $color;
+    transform: translateY(-2px);
+    z-index: -1;
+  }
+
+  &::before {
+    top: 118%;
+    width: 0;
+    background: $color;
+    transition: width 150ms linear;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    width: 100%;
+    background: $color;
+  }
+}
+
+@mixin loading-state {
+  background: linear-gradient(300deg, darken($loading-grey, 10%), $loading-grey);
+  background-size: 200% 200%;
+  animation: LoadingFade 2s ease infinite;
+}
+
+@keyframes LoadingFade {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+
+
+@mixin link {
+  transition: all .15s ease;
+  text-decoration: none;
+  position: relative;
+  outline: transparent;
+  background: none;
+  border: none;
+  line-height: rem(20);
+  color: $link-primary-color;
+  display: inline-block;
+  width: fit-content;
+  cursor: pointer;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: $teal;
+    z-index: -1;
+  }
+
+  .icon {
+    transition: all .15s linear;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    fill: $teal;
+    display: inline-block;
+    margin-left: 4px;
+  }
+
+  &:hover .icon,
+  &:focus .icon {
+    transform: translateX(3px);
+  }
+
+  &.link-disabled,
+  &.link-disabled,
+  &.link-disabled .icon {
+    cursor: default;
+    color: inherit;
+    fill: inherit;
+    opacity: .5;
+    transform: none !important;
+  }
+
+  &.link-disabled::before,
+  &.link-disabled::before {
+    content: none;
+  }
+}
+
+@mixin link-primary {
+  @include primary-font(500);
+  @include font-size(15);
+  color: $link-primary-color;
+  letter-spacing: 1px;
+  line-height: 20px;
+  border-bottom: 1px solid $black;
+  text-transform: uppercase;
+  
+  &:hover {
+    color: $link-primary-hover-color;
+    border-color: transparent;
+  }
+
+  &::before {
+    top: 100%;
+    background: $link-primary-underline-color;
+    transition: $transition-fast;
+    transition-delay: .15s;
+    width: 0;
+  }
+  
+  &:hover::before {
+    width: 50%;
+  }
+
+  .icon {
+    fill: $link-primary-icon-fill;
+  }
+
+  &:hover .icon {
+    fill: $link-primary-hover-color;
+  }
+}
+
+
+@mixin link-secondary {
+  color: $link-secondary-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-secondary-hover-color;
+  }
+}
+
+@mixin link-tertiary {
+  border-bottom: 1px solid transparent;
+  font-weight: normal;
+  color: $link-tertiary-color;
+
+  &.link-disabled,
+  &.link-disabled,
+  &.link-disabled .icon {
+    cursor: default;
+    color: $black;
+    fill: $black;
+    opacity: .5;
+    transform: none !important;
+  }
+
+  &::before {
+    top: 100%;
+    width: 0;
+    background: $link-tertiary-underline-color;
+    transition: width 150ms linear;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    width: 100%;
+  }
+}
+
+
+@mixin tooltip {
+  .tooltip {
+    display: block !important;
+    z-index: 10000;
+    box-shadow: 1px 2px 0 rgba(42,52,52,0.15);
+
+    .tooltip-inner {
+      background: $white;
+      color: $black;
+      border-radius: 2px;
+      padding: 28px 40px;
+      border: 1px solid #C2C3C3;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .tooltip-arrow {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      position: absolute;
+      margin: 3px;
+      border-color: #C2C3C3;
+    }
+
+    &[x-placement^="top"] {
+      margin-bottom: 3px;
+
+      .tooltip-arrow {
+        border-width: 3px 3px 0 3px;
+        border-left-color: transparent !important;
+        border-right-color: transparent !important;
+        border-bottom-color: transparent !important;
+        bottom: -3px;
+        left: calc(50% - 3px);
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &[x-placement^="bottom"] {
+      margin-top: 3px;
+
+      .tooltip-arrow {
+        border-width: 0 3px 3px 3px;
+        border-left-color: transparent !important;
+        border-right-color: transparent !important;
+        border-top-color: transparent !important;
+        top: -3px;
+        left: calc(50% - 3px);
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &[x-placement^="right"] {
+      margin-left: 3px;
+
+      .tooltip-arrow {
+        border-width: 3px 3px 3px 0;
+        border-left-color: transparent !important;
+        border-top-color: transparent !important;
+        border-bottom-color: transparent !important;
+        left: -3px;
+        top: calc(50% - 3px);
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &[x-placement^="left"] {
+      margin-right: 3px;
+
+      .tooltip-arrow {
+        border-width: 3px 0 3px 3px;
+        border-top-color: transparent !important;
+        border-right-color: transparent !important;
+        border-bottom-color: transparent !important;
+        right: -3px;
+        top: calc(50% - 3px);
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &[aria-hidden='true'] {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity .15s, visibility .15s;
+    }
+
+    &[aria-hidden='false'] {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity .15s;
+    }
+  }
+}
+
+@mixin size($size) {
+  height: #{$size}px;
+  width: #{$size}px;
+}
+
+
+@mixin webkit($attr, $time, $type) {
+  -webkit-transition: $attr $time $type;
+  -moz-transition: $attr $time $type;
+  -o-transition: $attr $time $type;
+  -ms-transition: $attr $time $type;
+  transition: $attr $time $type;
+}
+
+@mixin darkmode-background-gradient {
+  background: rgb(29,52,180);
+  background: linear-gradient(0deg, rgba(29,52,180,1) 0%, rgba(22,22,22,1) 100%);
+}

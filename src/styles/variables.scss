@@ -1,0 +1,185 @@
+// -----------------
+//   Colors
+// -----------------
+
+
+// -- Primary Brand Colors -----------
+$dark-grey: #545454;
+$med-grey:#7E7E7E;
+$light-grey: #EEF0F2;
+$blue: #377394;
+$light-blue: #88AABC;
+$peach: #D08A58;
+$dark-blue: #12163B;
+$black: #231f20;
+
+
+// -- Bright Primary Brand Colors -----------
+$b-bright-blue: #299BFE;
+$b-medium-blue: #344E76;
+$b-dark-blue: #0D1542;
+$b-disabled-blue: #82879c;
+$b-light-gray: #BDBBBB;
+
+$b-teal: #23BFE6;
+$b-green: #029D9A;
+$b-orange: #EF905E;
+
+$b-black: #161616;
+$b-charcoal: #191919;
+$b-neutral: #F6F7F9;
+$b-beige: #EDEBE5;
+$b-background-gray:#F8F8F8;
+
+$b-darkmode-background:#1d34b4;
+
+$b-gray-disabled:#CDCDCD;
+$b-gray:#c8ced3;//check
+$b-form-gray:#E1E8EE;
+$b-red:#F07590;
+$b-dark-red:#9A031E;
+
+
+// -- Accent Colors -----------
+$dark-teal: #1C7F8D;// take out
+$teal: #23a2b3;
+$light-teal: rgba($teal, .1);
+$pink: #D83A94;
+$blue-neon: #4D4DFF;
+$yellow-neon: #F1EA57;
+$tan: #E5DFD8;
+
+// -- Utility Colors  -----------
+$white: #FFFFFF;
+$off-white: #e9e9e9;
+$grey: #545454;
+$semi-dark-grey: #767474;
+$red: #D42828;
+$green: #3DC278;
+$loading-grey: #f8f8f8;
+
+// -- Other Colors  -----------
+$lead: #939393;
+$charcoal: #666;
+$light-red: #fbeff3;
+$dark-green: #155724;
+$light-green: #d4edda;
+$gold: #cccc00;
+$orange: #db8a16;
+$transparent-black: rgba($black, 0.6);
+
+ 
+// typography
+$text-main: $black;
+$text-dark: $dark-grey;
+$text-mid: $charcoal;
+$text-light: $white;
+$text-accent: $orange;
+$text-completed: $light-grey;
+$text-subtitle: $light-grey;
+ 
+// gutter
+$content-gutter: 1rem;
+
+// font size
+$h1-size: 32;
+$h2-size: 24;
+$h3-size: 18.72;
+$h4-size: 16;
+$h5-size: 13.28;
+$h6-size: 10.72;
+
+// font weight
+$thin-f : 100;
+$extra-light-f : 200;
+$light-f : 300;
+$regular-f : 400;
+$medium-f : 500;
+$semi-bold-f : 600;
+$bold-f : 700;
+$extra-bold-f : 800;
+$black-f : 900;
+
+// grid
+$grid-gutter: 30px;
+$grid-column-count: 12;
+$block-grid-column-count: 8;
+
+
+// header
+$mobile-nav-height: 72px;
+
+
+// // -----------------
+// //   Font Setup ( TK Web Fonts )
+// // -----------------
+$font-size-base: 16; // base size in px
+
+$primary-font: 'Poppins';
+$secondary-font: 'sans-serif';
+
+ 
+// -----------------
+//   Grid
+// -----------------
+
+$content-gutter: 1rem;
+$grid-gutter-sm: 16px;
+$grid-gutter: 20px;
+$grid-column-count: 12;
+$block-grid-column-count: 8;
+$container-max-width: 1312px;
+
+// -----------------
+//   Misc
+// -----------------
+$max-section-width: 1400px;
+$drop-shadow: 0 3px 8px rgba($black, 0.1);
+$drop-shadow-light: 0 3px 8px rgba($black, 0.05);
+
+$breakpoint-mobile: 580px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-large: 992px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-large: 1220px;
+$breakpoint-hd: 1312px;
+$container-max-width: $breakpoint-hd;
+
+$transition: all .3s ease;
+$transition-fast: all .15s ease;
+$transition-slow: all .5s ease;
+
+
+// -----------------
+//   Navigation
+// -----------------
+$nav-breakpoint: 1235px;
+
+
+// -----------------
+//   Links
+// -----------------
+$link-primary-color: $black;
+$link-primary-hover-color: $black;
+$link-primary-underline-color: $black;
+$link-primary-icon-fill: $teal; 
+
+$link-secondary-color: $b-bright-blue;
+$link-secondary-hover-color: $b-medium-blue;
+$link-secondary-overlay-color: $b-bright-blue;
+$link-secondary-overlay-opacity: .2; 
+
+$link-tertiary-color: $black;
+$link-tertiary-underline-color: $black;
+
+
+// -----------------
+//   Exports
+// -----------------
+
+:export {
+  breakMobile: 581px;
+  breakTablet: $breakpoint-tablet;
+  breakDesktop: 1025px;
+  breakHd: $breakpoint-hd;
+}

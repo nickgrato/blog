@@ -1,0 +1,31 @@
+// settings
+@import 'styles/variables';
+@import 'styles/media-queries';
+@import 'styles/mixins';
+
+
+
+body {
+  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+--fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman";
+}
+
+.mobile-nav-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.mobile-nav-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.mobile-nav-exit {
+  opacity: 1;
+}
+.mobile-nav-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms, transform 300ms;
+}

@@ -53,16 +53,16 @@
 }
 
 .menu-button {
+  @include tablet-down {
+    display: block;
+  }
+
   display: none;
   color: white;
   background: transparent;
   border: none;
   height: 40px;
   width: 40px;
-  align-items: center;
   font-size: 28px;
-
-  @include tablet-down {
-    display: flex;
-  }
+  padding-top: 7px;
 }

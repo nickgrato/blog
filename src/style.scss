@@ -3,7 +3,9 @@
 @import 'styles/media-queries';
 @import 'styles/mixins';
 
-
+img {
+  max-width: 100%;
+}
 
 body {
   font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,

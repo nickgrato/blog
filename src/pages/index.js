@@ -8,6 +8,7 @@ import Seo from "../components/seo"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const nPosts = data.allPrismicPost.nodes
 
   if (posts.length === 0) {
     return (
@@ -28,28 +29,33 @@ const BlogIndex = ({ data, location }) => {
       <Seo title="All posts" />
       <Bio />
       <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+        {nPosts.map(post => {
+          const title = post.data.title.text 
+          const image = post.data.image
+          const imageSrc = image.url
+          const imageAlt = image.alt
+          
 
           return (
-            <li key={post.fields.slug}>
+            <li key={post.uid}>
               <article
                 className="post-list-item"
                 itemScope
                 itemType="http://schema.org/Article"
               >
                 <header>
+                  <img src={imageSrc} alt={imageAlt}/>
                   <h2>
-                    <Link to={post.fields.slug} itemProp="url">
+                    <Link to={'/' + post.uid} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{post.data.date}</small>
                 </header>
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
+                      __html: post.data.excerpt.html
                     }}
                     itemProp="description"
                   />
@@ -85,5 +91,25 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    allPrismicPost (sort: { fields: [data___date], order: DESC }){
+      nodes {
+        data {
+          date
+          title {
+            text
+          }
+          image {
+            alt
+            url
+          }
+          excerpt {
+            html
+          }
+        }
+        uid
+      }
+    }
+
   }
 `

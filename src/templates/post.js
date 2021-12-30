@@ -7,9 +7,13 @@ const Post = ({ data, location }) => {
   if (!data) return null
   
   const post = data.prismicPost
+  const image = post.data.image
+  const imageSrc = image.url
+  const imageAlt = image.alt
 
   return (
     <Layout>
+      <img src={imageSrc} alt={imageAlt}/>
       <h1>{post.data.title.text}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.data.content.html }} />
     </Layout>
@@ -22,6 +26,10 @@ export const pageQuery = graphql`
     prismicPost(uid: { eq: $uid }) {
       uid
       data {
+        image {
+          alt
+          url
+        }
         title {
           text
         }

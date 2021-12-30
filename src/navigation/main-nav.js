@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { CSSTransition } from 'react-transition-group';
 import MobileNav from '../navigation/mobile-nav'
 import { useState } from 'react';
-import { MdMenu } from "@react-icons/all-files/md/MdMenu";
+import { MdMenu } from "@react-icons/all-files/md/MdMenu"
 
 const NavMain = () => {
 

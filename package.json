@@ -25,6 +25,7 @@
     "gatsby-remark-responsive-iframe": "^5.4.0",
     "gatsby-remark-smartypants": "^5.4.0",
     "gatsby-source-filesystem": "^4.4.0",
+    "gatsby-source-prismic": "^5.2.3",
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "prismjs": "^1.25.0",
@@ -38,6 +39,7 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "prettier": "^2.4.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",

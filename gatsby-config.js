@@ -1,3 +1,8 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+
 module.exports = {
   siteMetadata: {
     title: `Dev Mind`,
@@ -14,6 +19,17 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `devmind`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          post: require("./custome_types/post.json"),
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

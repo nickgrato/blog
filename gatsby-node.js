@@ -5,7 +5,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPost = path.resolve(`src/templates/blog-post.js`)
+  const template = path.resolve("src/templates/post.js")
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -25,6 +26,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     `
   )
+
+  const pages = await graphql(`
+    {
+      allPrismicPost {
+        nodes {
+          id
+          uid
+        }
+      }
+    }
+  `)
+
+  pages.data.allPrismicPost.nodes.forEach(post => {
+    createPage({
+      path: `/${post.uid}`,
+      component: template,
+      context: {
+        uid: post.uid,
+      },
+    })
+  })
 
   if (result.errors) {
     reporter.panicOnBuild(

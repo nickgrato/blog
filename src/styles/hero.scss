@@ -1,0 +1,55 @@
+.hero {
+  &-wrapper {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 150px;
+
+    @include tablet-down(){
+      padding: 15px;
+      height: 450px;
+    }
+
+  }
+
+  &-content-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    width: 100%;
+  }
+
+  &-content-container {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+
+    @include tablet-down(){
+      width: 315px;
+      height: 315px;
+    }
+  }
+
+  &-content {
+    
+  }
+
+  &-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+  }
+
+  &-body {
+    color: white;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+}

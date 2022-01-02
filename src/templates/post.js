@@ -12,10 +12,14 @@ const Post = ({ data, location }) => {
   const imageAlt = image.alt
 
   return (
+    
+      
     <Layout>
-      <img src={imageSrc} alt={imageAlt}/>
-      <h1>{post.data.title.text}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.data.content.html }} />
+      <div className="global-wrapper" > 
+        <img src={imageSrc} alt={imageAlt}/>
+        <h1>{post.data.title.text}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.data.content.html }} />
+      </div>
     </Layout>
   )
 }

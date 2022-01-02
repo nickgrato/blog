@@ -29,16 +29,16 @@ const Layout = ({ location, title, children }) => {
       <NavMain></NavMain>
       
       {/* data-is-root-path={isRootPath} */}
-      <div className="global-wrapper" >
+      <div>
         
         {/* <header className="global-header">{header}</header> */}
         <main>{children}</main>
-        <footer>
+        {/* <footer>
           © {new Date().getFullYear()}, Built By Me: Stack {` `} 
           <a href="https://www.gatsbyjs.com" target="_blank">Gatsby</a>, {` `}
           <a href="https://www.netlify.com/" target="_blank">Netlify</a>, {` `}
           <a href="https://reactjs.org/" target="_blank">ReactJs</a>,
-        </footer>
+        </footer> */}
       </div>
     </div>
    

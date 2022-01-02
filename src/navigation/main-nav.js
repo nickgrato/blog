@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import MobileNav from '../navigation/mobile-nav'
 import { useState } from 'react';
 import { MdMenu } from "@react-icons/all-files/md/MdMenu"
+import { StaticImage } from "gatsby-plugin-image"
 
 const NavMain = () => {
 
@@ -17,7 +18,15 @@ const NavMain = () => {
       <div className={container}>
 
         <Link className={logo} to="/" >
-          DEV MIND
+          <StaticImage
+            className="logo"
+            layout="fixed"
+            formats={["auto", "webp", "avif"]}
+            src="../images/grato_codes.png"
+            width={110}
+            quality={95}
+            alt="Profile picture"
+          />
         </Link>
 
 

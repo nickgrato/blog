@@ -4,29 +4,35 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Hero from '../components/hero'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const nPosts = data.allPrismicPost.nodes
 
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
+  // if (posts.length === 0) {
+  //   return (
+  //     <Layout location={location} title={siteTitle}>
+  //       <Seo title="All posts" />
+  //       <Bio />
+  //       <p>
+  //         No blog posts found. Add markdown posts to "content/blog" (or the
+  //         directory you specified for the "gatsby-source-filesystem" plugin in
+  //         gatsby-config.js).
+  //       </p>
+  //     </Layout>
+  //   )
+  // }
 
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
+      <Hero title="Welcome" body="Look around and hit the contact button if you have any questions" backgroundImage="https://images.prismic.io/devmind/e24fffd7-e365-4c08-a292-8d9b437659f9_space_x.jpg?auto=compress,format"/>
+
+      <div className="global-wrapper" >
+
+      
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {nPosts.map(post => {
@@ -65,6 +71,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      </div>
     </Layout>
   )
 }

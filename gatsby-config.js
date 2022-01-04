@@ -27,6 +27,7 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
         schemas: {
           post: require("./custome_types/post.json"),
+          about: require("./custome_types/about.json"),
         },
       },
     },

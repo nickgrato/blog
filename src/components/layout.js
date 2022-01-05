@@ -1,5 +1,6 @@
 import * as React from "react"
 import NavMain from '../navigation/main-nav'
+import Footer from '../components/footer'
 import { Link } from "gatsby"
 
 const Layout = ({ location, title, children }) => {
@@ -30,15 +31,9 @@ const Layout = ({ location, title, children }) => {
       
       {/* data-is-root-path={isRootPath} */}
       <div>
-        
         {/* <header className="global-header">{header}</header> */}
         <main>{children}</main>
-        {/* <footer>
-          © {new Date().getFullYear()}, Built By Me: Stack {` `} 
-          <a href="https://www.gatsbyjs.com" target="_blank">Gatsby</a>, {` `}
-          <a href="https://www.netlify.com/" target="_blank">Netlify</a>, {` `}
-          <a href="https://reactjs.org/" target="_blank">ReactJs</a>,
-        </footer> */}
+        <Footer/>
       </div>
     </div>
    

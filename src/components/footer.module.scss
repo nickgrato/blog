@@ -1,0 +1,60 @@
+@import "../styles/variables";
+@import "../styles/media-queries";
+@import "../styles/mixins";
+
+.footer {
+  &_wrapper {
+    height: 225px;
+  }
+
+  &_container {
+    background-color: $bright-peach;
+    padding: 30px;
+    height: 200px;
+  }
+
+  &_icon_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    font-size: 28px;
+    & > a {
+      color: inherit;
+    }
+  }
+
+  &_footer {
+    @include font-size(14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #232323;
+    height: 74px;
+    color: white;
+    padding: 10px;
+
+    @include tablet-down() {
+      @include font-size(12);
+      height: 90px;
+    }
+
+    &_divider {
+      @include tablet-down() {
+        display: none;
+      }
+    }
+
+    &_content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 470px;
+
+      @include tablet-down() {
+        width: initial;
+        flex-direction: column;
+      }
+    }
+  }
+}

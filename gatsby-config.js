@@ -5,7 +5,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Dev Mind`,
+    title: `Grato Codes`,
     author: {
       name: `Nick Grato`,
       summary: `who lives and works in San Diego building useful things.`,
@@ -131,8 +131,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Grato Codes`,
+        short_name: `G-Codes`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website

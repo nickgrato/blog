@@ -204,6 +204,12 @@ table thead tr th {
 
 a {
   color: var(--color-primary);
+  text-decoration: none;
+}
+
+a.lite {
+  color:white;
+  font-weight: 600;
 }
 
 a:hover,

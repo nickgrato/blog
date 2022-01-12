@@ -28,7 +28,11 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <Hero title="Welcome" body="Look around and hit the contact button if you have any questions" backgroundImage="https://images.prismic.io/devmind/e24fffd7-e365-4c08-a292-8d9b437659f9_space_x.jpg?auto=compress,format"/>
+      <Hero 
+        title="Welcome" 
+        body="Look around and hit the contact button if you have any questions" 
+        backgroundImage="https://images.prismic.io/devmind/4a17b94c-b2d9-4b78-9ba2-f25290368a41_nasa.jpg?auto=compress,format"
+      />
 
       <div className="global-wrapper" >
 

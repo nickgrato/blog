@@ -9,8 +9,34 @@
 
   &_container {
     background-color: $bright-peach;
+    display: flex;
+
+    @include mobile-down(){
+      display: block;
+    }
+  }
+
+  &_branding_container { 
     padding: 30px;
-    height: 200px;
+    border-right: 2px solid #954619;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile-down(){
+      border-right: 0px;
+    }
+  }
+
+  &_navigation_container { 
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 30px;
+
+    @include mobile-down(){
+      padding: 10px;
+    }
   }
 
   &_icon_container {
@@ -49,7 +75,7 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      max-width: 470px;
+      max-width: 530px;
 
       @include tablet-down() {
         width: initial;

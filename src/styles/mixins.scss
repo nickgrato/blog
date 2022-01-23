@@ -2,6 +2,7 @@
   $rem-size: calc($size / 16);
   @return #{$rem-size}rem;
 }
+
 /**
  * Forces an element to self-clear its children
  *

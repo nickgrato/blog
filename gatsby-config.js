@@ -10,8 +10,8 @@ module.exports = {
       name: `Nick Grato`,
       summary: `who lives and works in San Diego building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `A blog and portfolio to share all the things I'm working on and how I got there. I hope to share useful tips you can take and use or even make better. A few technologies I specialize in are React, Angula, Vue, Node and Shopify.`,
+    siteUrl: `https://gratocodes.com/`,
     social: {
       twitter: `nickgrato`,
     },

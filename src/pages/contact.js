@@ -9,7 +9,7 @@ const Contact = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Contact" />
+      {/* <Seo title="Contact" /> */}
       <h1>Contact Page</h1>
     </Layout>
   )

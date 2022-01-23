@@ -10,7 +10,7 @@ const About = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="About Me" />
+      {/* <Seo title="About Me" /> */}
       <div className="page-wrapper">
         <h1 style={{textAlign:'center'}}>{aboutData.title.text}</h1>
         <div className="global-wrapper fancy-p">

@@ -9,7 +9,7 @@ const Goals = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Contact" />
+      {/* <Seo title="Contact" /> */}
       <h1>Goals Page</h1>
     </Layout>
   )

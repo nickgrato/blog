@@ -1,10 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Gist from 'react-gist'
-
+import Seo from "../components/seo"     
 import Layout from "../components/layout"
 
-const Post = ({ data, location }) => {
+const Post = ({ data, pageContext }) => {
+
   if (!data) return null
   
   const post = data.prismicPost
@@ -13,15 +14,23 @@ const Post = ({ data, location }) => {
   const imageSrc = image.url
   const imageAlt = image.alt
 
+  const seoData = {
+    image : post.data.image,
+    path: pageContext.postPath,
+    title: post.data.title.text,
+    description: post.data.excerpt.text,
+  }
+
   return (
     
       
     <Layout>
+
+      <Seo post={seoData} />
+
       <div className="global-wrapper" > 
         <img src={imageSrc} alt={imageAlt}/>
         <h1>{post.data.title.text}</h1>
-        {/* <script src="https://gist.github.com/nickgrato/.js"></script> */}
-
 
         {post.data.content_block.map((block,index) => {
 
@@ -50,6 +59,9 @@ export const pageQuery = graphql`
           url
         }
         title {
+          text
+        }
+        excerpt{
           text
         }
         content {

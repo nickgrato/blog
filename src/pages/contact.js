@@ -11,7 +11,7 @@ const Contact = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       {/* <Seo title="Contact" /> */}
       <div>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true" action="/pages/success">
           <p>
             <label>
               Your Name: <input type="text" name="name" />

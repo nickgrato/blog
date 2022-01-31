@@ -1,11 +1,11 @@
 import * as React from "react"
 import GeneralButton from './general-button'
+import { Link } from "gatsby"
+
 
 const Hero = prop => {
 
-  const contactClick = () => {
-    console.log('set up contact form')
-  }
+  
   
   return (
     <div className='hero-wrapper' 
@@ -16,7 +16,9 @@ const Hero = prop => {
             <div className='hero-title'>{prop.title}</div>
             <div className='hero-body'>{prop.body}</div>
             <div className='hero-actions'>
-              <GeneralButton category="button-primary" text="Contact Me" click={contactClick} />
+              <Link to={prop.cta}>
+                <GeneralButton category="button-primary" text="Contact Me" click={()=>{}} />
+              </Link>
             </div>
           </div>
         </div>

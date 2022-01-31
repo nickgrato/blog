@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const About = ({ data, location }) => {
+const Success = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
@@ -17,7 +17,7 @@ const About = ({ data, location }) => {
   )
 }
 
-export default About
+export default Success
 
 export const pageQuery = graphql`
   query {

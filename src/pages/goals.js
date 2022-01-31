@@ -15,7 +15,7 @@ const Goals = ({ data, location }) => {
   )
 }
 
-export default Success
+export default Goals
 
 export const pageQuery = graphql`
   query {

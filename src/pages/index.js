@@ -31,6 +31,7 @@ const BlogIndex = ({ data, location }) => {
       <Hero 
         title="Welcome" 
         body="Look around and hit the contact button if you have any questions" 
+        ctaText="Contact Me"
         cta="/contact"
         backgroundImage="https://images.prismic.io/devmind/4a17b94c-b2d9-4b78-9ba2-f25290368a41_nasa.jpg?auto=compress,format"
       />

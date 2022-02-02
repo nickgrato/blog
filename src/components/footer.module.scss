@@ -56,9 +56,8 @@
     align-items: center;
     justify-content: center;
     background-color: #232323;
-    height: 74px;
+    height: 67px;
     color: white;
-    padding: 10px;
 
     @include tablet-down() {
       @include font-size(12);

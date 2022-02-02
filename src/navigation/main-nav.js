@@ -38,7 +38,7 @@ const NavMain = () => {
         <ul className={navWrapper}>
           <li><Link className={navLink} to="/" >Home</Link></li>
           <li><Link className={navLink} to="/about" >About</Link></li>
-          <li><Link className={navLink} to="/goals">Goals</Link></li>
+          {/* <li><Link className={navLink} to="/goals">Goals</Link></li> */}
           <li><Link className={navLink} to="/contact">Contact</Link></li>
         </ul>
 

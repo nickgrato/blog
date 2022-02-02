@@ -45,6 +45,10 @@
     font-size: 50px;
     font-weight: bold;
     color: white;
+
+    @include tablet-down(){
+      font-size: 40px;
+    }
   }
 
   &-body {

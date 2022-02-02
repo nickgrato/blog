@@ -1,0 +1,98 @@
+// VARIABLES // ============================== //
+$bg-color: #424242;
+$hl-color: $peach;
+$muted-color: mix(white, $bg-color, 70%);
+$trans-time: 300ms;
+$width: 100%;
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+
+.group {
+  position: relative;
+  margin: 45px 0;
+}
+
+// INPUTS // ============================== //
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  background: none;
+  // color: $muted-color;
+  font-size: 14px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: $width;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid $muted-color;
+  &:focus {
+    outline: none;
+  }
+  &:focus ~ label,
+  &:valid ~ label,
+  &:not(:placeholder-shown) ~ label {
+    top: -14px;
+    font-size: 12px;
+    color: $hl-color;
+  }
+
+  &:valid ~ label {
+    color: green;
+  }
+  // &:not(:valid) ~ label {
+  //   top: -14px;
+  //   font-size: 12px;
+  //   color:red
+  // }
+  &:focus ~ .bar:before {
+    width: $width;
+  }
+}
+
+input[type="password"] {
+  letter-spacing: 0.3em;
+}
+
+
+
+label {
+  color: $muted-color;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: $trans-time ease all;
+}
+
+input::placeholder {
+  opacity: 0;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: $width;
+  &:before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: $hl-color;
+    transition: $trans-time ease all;
+    left: 0%;
+  }
+}
+

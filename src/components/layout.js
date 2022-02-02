@@ -24,17 +24,18 @@ const Layout = ({ location, title, children }) => {
   // }
 
   return (
-    <div>
+    <div class="app-wrapper">
      
 
       <NavMain></NavMain>
       
       {/* data-is-root-path={isRootPath} */}
-      <div>
+      <div class="main-wrapper">
         {/* <header className="global-header">{header}</header> */}
         <main>{children}</main>
-        <Footer/>
       </div>
+      <Footer/>
+
     </div>
    
   )

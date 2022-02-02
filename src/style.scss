@@ -4,6 +4,7 @@
 @import 'styles/mixins';
 @import 'styles/hero';
 @import 'styles/button';
+@import 'styles/form';
 
 img {
   max-width: 100%;
@@ -14,6 +15,16 @@ body {
   "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman";
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  flex-grow: 1;
 }
 
 .mobile-nav-enter {

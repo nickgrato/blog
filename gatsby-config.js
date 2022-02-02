@@ -8,7 +8,7 @@ module.exports = {
     title: `Grato Codes`,
     author: {
       name: `Nick Grato`,
-      summary: `who lives and works in San Diego building useful things.`,
+      summary: `who lives and works in San Diego building useful things and working as a Sr Web Developer`,
     },
     description: `A blog and portfolio to share all the things I'm working on and how I got there. I hope to share useful tips you can take and use or even make better. A few technologies I specialize in are React, Angula, Vue, Node and Shopify.`,
     siteUrl: `https://gratocodes.com/`,

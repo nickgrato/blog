@@ -1,12 +1,12 @@
-import * as React from "react"
-import { graphql } from "gatsby"
+import * as React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
+import Layout from '../components/layout'
 // import Seo from "../components/seo"
-import GeneralButton from "../components/general-button"
-import GeneralInput from "../components/general-input"
-import GeneralTextarea from "../components/general-textarea"
-import Hero from "../components/hero"
+import GeneralButton from '../components/general-button'
+import GeneralInput from '../components/general-input'
+import GeneralTextarea from '../components/general-textarea'
+import Hero from '../components/hero'
 
 const Contact = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -25,7 +25,7 @@ const Contact = ({ data, location }) => {
       />
 
       <div className="page-wrapper">
-        <h1 style={{ textAlign: "center" }}>Contact</h1>
+        <h1 style={{ textAlign: 'center' }}>Contact</h1>
         <div className="global-wrapper">
           <form
             name="Contact Form"

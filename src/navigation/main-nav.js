@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 import {
   containerWrapper,
   container,
@@ -7,13 +7,13 @@ import {
   logo,
   menuButton,
   menuIcon,
-} from "./main-nav.module.scss"
-import { Link } from "gatsby"
-import { CSSTransition } from "react-transition-group"
-import MobileNav from "../navigation/mobile-nav"
-import { useState } from "react"
-import { MdMenu } from "@react-icons/all-files/md/MdMenu"
-import { StaticImage } from "gatsby-plugin-image"
+} from './main-nav.module.scss'
+import { Link } from 'gatsby'
+import { CSSTransition } from 'react-transition-group'
+import MobileNav from '../navigation/mobile-nav'
+import { useState } from 'react'
+import { MdMenu } from '@react-icons/all-files/md/MdMenu'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const NavMain = () => {
   const [showMobileNav, setShowMobileNav] = useState(false)
@@ -25,7 +25,7 @@ const NavMain = () => {
           <StaticImage
             className="logo"
             layout="fixed"
-            formats={["auto", "webp", "avif"]}
+            formats={['auto', 'webp', 'avif']}
             src="../images/grato_codes.png"
             width={110}
             quality={95}

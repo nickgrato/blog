@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 import {
   containerWrapper,
   container,
@@ -7,10 +7,10 @@ import {
   linksWrapper,
   navWrapper,
   navLink,
-} from "./mobile-nav.module.scss"
-import { Link } from "gatsby"
-import ScrollLock from "react-scrolllock"
-import { MdClose } from "@react-icons/all-files/md/MdClose"
+} from './mobile-nav.module.scss'
+import { Link } from 'gatsby'
+import ScrollLock from 'react-scrolllock'
+import { MdClose } from '@react-icons/all-files/md/MdClose'
 
 const MobileNav = props => {
   return (

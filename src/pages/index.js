@@ -1,10 +1,10 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
 // import Seo from "../components/seo"
-import Hero from "../components/hero"
+import Hero from '../components/hero'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -57,7 +57,7 @@ const BlogIndex = ({ data, location }) => {
                   <header>
                     <img src={imageSrc} alt={imageAlt} />
                     <h2>
-                      <Link to={"/" + post.uid} itemProp="url">
+                      <Link to={'/' + post.uid} itemProp="url">
                         <span itemProp="headline">{title}</span>
                       </Link>
                     </h2>

@@ -1,10 +1,10 @@
-import * as React from "react"
-import * as styles from "./footer.module.scss"
-import { VscGithub } from "@react-icons/all-files/vsc/VscGithub"
-import { VscTwitter } from "@react-icons/all-files/vsc/VscTwitter"
-import { StaticImage } from "gatsby-plugin-image"
-import { AiFillLinkedin } from "@react-icons/all-files/ai/AiFillLinkedin"
-import { Link } from "gatsby"
+import * as React from 'react'
+import * as styles from './footer.module.scss'
+import { VscGithub } from '@react-icons/all-files/vsc/VscGithub'
+import { VscTwitter } from '@react-icons/all-files/vsc/VscTwitter'
+import { StaticImage } from 'gatsby-plugin-image'
+import { AiFillLinkedin } from '@react-icons/all-files/ai/AiFillLinkedin'
+import { Link } from 'gatsby'
 
 const Footer = prop => {
   return (
@@ -16,7 +16,7 @@ const Footer = prop => {
             <StaticImage
               className="branding"
               layout="fixed"
-              formats={["auto", "webp", "avif"]}
+              formats={['auto', 'webp', 'avif']}
               src="../images/grato_globe.png"
               width={130}
               quality={95}
@@ -73,7 +73,7 @@ const Footer = prop => {
               target="_blank"
             >
               Gatsby
-            </a>{" "}
+            </a>{' '}
             {` `}
             <a
               href="https://prismic.io"
@@ -82,7 +82,7 @@ const Footer = prop => {
               target="_blank"
             >
               Pismic
-            </a>{" "}
+            </a>{' '}
             {` `}
             <a
               href="https://www.netlify.com/"

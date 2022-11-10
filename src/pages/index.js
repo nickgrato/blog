@@ -56,11 +56,11 @@ const BlogIndex = ({ data, location }) => {
                 >
                   <header>
                     <img src={imageSrc} alt={imageAlt} />
-                    <h2>
+                    {/* <h2>
                       <Link to={'/' + post.uid} itemProp="url">
                         <span itemProp="headline">{title}</span>
                       </Link>
-                    </h2>
+                    </h2> */}
                     <small>{post.data.date}</small>
                   </header>
                   <section>

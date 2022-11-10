@@ -1,8 +1,8 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-import { RichText } from 'prismic-reactjs';
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import { RichText } from 'prismic-reactjs'
+import Layout from '../components/layout'
+// import Seo from "../components/seo"
 
 const About = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -10,11 +10,14 @@ const About = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      {/* <Seo title="About Me" /> */}
+      {/* 
+  TODO:  Check if we need this SEO, guessing yes?  
+      
+      <Seo title="About Me" /> */}
       <div className="page-wrapper">
-        <h1 style={{textAlign:'center'}}>{aboutData.title.text}</h1>
+        <h1 style={{ textAlign: 'center' }}>{aboutData.title.text}</h1>
         <div className="global-wrapper fancy-p">
-          <RichText render={aboutData.content.richText}/>
+          <RichText render={aboutData.content.richText} />
         </div>
       </div>
     </Layout>
@@ -30,7 +33,7 @@ export const pageQuery = graphql`
         title
       }
     }
-   
+
     prismicAbout {
       data {
         content {
@@ -41,8 +44,5 @@ export const pageQuery = graphql`
         }
       }
     }
-
   }
 `
-
-
